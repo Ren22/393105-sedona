@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Renat Nigmetzianov](https://up.htmlacademy.ru/htmlcss/17/user/393105).
-* Наставник: `Неизвестно`.
+* Наставник: [Полина Немчак](https://htmlacademy.ru/profile/id69724).
 
 ---
 
