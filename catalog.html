@@ -2,48 +2,57 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
+    <title>Седона - Поиск гостиницы в Седоне</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <img src="index.html" alt="logo">
-      <ul>
-        <li><a href="info.html">Информация</a></li>
-        <li><a href="photovideo.html">Фото и видео</a></li>
-        <li><a href="map.html">Карта штата</a></li>
-        <li><a href="hotels">Гостиницы</a></li>
-      </ul>
+      <nav>
+        <a><img src="img/logo.png" alt="logo"></a>
+        <ul>
+          <li><a href="info.html">Информация</a></li>
+          <li><a href="photovideo.html">Фото и видео</a></li>
+          <li><a href="map.html">Карта штата</a></li>
+          <li><a href="hotels">Гостиницы</a></li>
+        </ul>
+      </nav>
     </header>
+    <main>
     <div class="search">
-      <div class="infrastr">
-        <label for="pool">
-        <input type="checkbox" id="pool" checked>Бассейн</label><br>
-        <label for="parking">
-        <input type="checkbox" id="parking">Парковка</label><br>
-        <label for="wifi">
-        <input type="checkbox" id="wifi">Wi-Fi</label><br>
-      </div>
-      <div class="livingtype">
-        <label for="hotel">
-        <input type="checkbox" id="hotel" checked>Отель</label><br>
-        <label for="motel">
-        <input type="checkbox" id="motel" checked>Мотель</label><br>
-        <label for="aparts">
-        <input type="checkbox" id="wifi" checked>Апартаменты</label><br>
-      </div>
+    <form action="search.php" method="GET">
+      <fieldset>
+        <legend>Инфраструктура</legend>
+          <label for="pool">
+          <input type="checkbox" id="pool" checked><p>Бассейн</p></label>
+          <label for="parking">
+          <input type="checkbox" id="parking"><p>Парковка</p></label>
+          <label for="wifi">
+          <input type="checkbox" id="wifi"><p>Wi-Fi</p></label>
+      </fieldset>
+      <fieldset>
+        <legend>Тип жилья</legend>
+          <label for="hotel">
+          <input type="checkbox" id="hotel" checked><p>Отель</p></label>
+          <label for="motel">
+          <input type="checkbox" id="motel" checked><p>Мотель</p></label>
+          <label for="aparts">
+          <input type="checkbox" id="wifi" checked><p>Апартаменты</p></label>
+      </fieldset>
+    </form>
+    </div>
       <div class="price">
+      <form action="price.php" method="GET">
         <p>Стоимость в сутки(Р):</p>
-        <table>
-          <tr>
-            <td>от <span>0</span></td>
-            <td>до <span>3000</span></td>
-          </tr>
-        </table>
+        <div>
+          <p>от <span>0</span></p>
+        </div>
+        <div>
+          <p>до <span>0</span></p>
+        </div>
         <div class="select_price"></div>
         <input type="submit" value="Показать">
+      </form>
       </div>
-    </div>
-    <div class="main">
       <div class="results">
         <p>Найдено: <span>3</span></p>
         <p>Сортировка</p>
@@ -56,23 +65,23 @@
         <a href = ""><img src="" alt="order_down"></a>
       </div>
       <div class="hotels">
-        <article>
-          <img src="/img/hotel1.jpg" alt="search_result1">
+        <section>
+          <img src="img/hotel1.jpg" alt="search_result1">
           <div>
-            <h2>Amara Resort & Spa</h2>
+            <h2>Amara Resort and Spa</h2>
             <p>Гостиница от <span>3500</span> Р. </p>
             <div>
               <a href="more.php">Подробнее</a>
               <a href="book.php">Забронировать</a>
             </div>
             <div class="stars">
-              <img src="/img/stars4.jpg">
+              <img src="img/4stars.png">
               <p> Рейтинг: <span>8,5</span></p>
             </div>
           </div>
-        </article>
-        <article>
-          <img src="/img/hotel2.jpg" alt="search_result2">
+        </section>
+        <section>
+          <img src="img/hotel2.jpg" alt="search_result2">
           <div>
             <h2>Desert Quail Inn</h2>
             <p>Мотель от <span>2000</span> Р. </p>
@@ -81,13 +90,13 @@
               <a href="book.php">Забронировать</a>
             </div>
             <div class="stars">
-              <img src="/img/stars2.jpg">
+              <img src="img/2stars.png">
               <p> Рейтинг: <span>8,9</span></p>
             </div>
           </div>
-        </article>
-        <article>
-          <img src="/img/hotel3.jpg" alt="search_result3">
+        </section>
+        <section>
+          <img src="img/hotel3.jpg" alt="search_result3">
           <div>
             <h2>Villas at Poco Diablo</h2>
             <p>Апартаменты от <span>4000</span> Р. </p>
@@ -96,26 +105,26 @@
               <a href="book.php">Забронировать</a>
             </div>
             <div class="stars">
-              <img src="/img/stars3.jpg">
+              <img src="img/3stars.png">
               <p> Рейтинг: <span>9,2</span></p>
             </div>
           </div>
-        </article>
+        </section>
       </div>
-    </div>
+    </main>
     <footer>
       <div class="info">
         <p>#VISITSEDONA</p>
       </div>
       <div class="social">
         <ul>
-          <li><a href="#vk"><img src="http://placehold.it/20x20" alt="vkontakte"></a></li>
-          <li><a href="#fb"><img src="http://placehold.it/20x20" alt="facebook"></a></li>
-          <li><a href="#inst"><img src="http://placehold.it/20x20" alt="instagram"></a></li>
+          <li><a href="#vk"><img src="img/twitter.png" alt="twitter"></a></li>
+          <li><a href="#fb"><img src="img/fb.png" alt="facebook"></a></li>
+          <li><a href="#inst"><img src="img/youtube.png" alt="youtube"></a></li>
         </ul>
       </div>
       <div class="devby">
-        <img src="devby.jpg">
+        <a href="https://htmlacademy.ru/intensive/adaptive"><img src="img/devby.png"></a>
       </div>
     </footer>
   </body>

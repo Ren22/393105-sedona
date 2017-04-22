@@ -2,114 +2,125 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Седона</title>
+    <title>Седона - открой для себя Аризону!</title>
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
     <header>
-      <img src="index.html" alt="logo">
-      <ul>
-        <li><a href="info.html">Информация</a></li>
-        <li><a href="photovideo.html">Фото и видео</a></li>
-        <li><a href="map.html">Карта штата</a></li>
-        <li><a href="hotels">Гостиницы</a></li>
-      </ul>
+      <nav>
+        <a><img src="img/logo.png" alt="logo"></a>
+        <ul>
+          <li><a href="info.html">Информация</a></li>
+          <li><a href="photovideo.html">Фото и видео</a></li>
+          <li><a href="map.html">Карта штата</a></li>
+          <li><a href="hotels">Гостиницы</a></li>
+        </ul>
+      </nav>
     </header>
+    <main>
     <div class="welcome">
-      <img src="" alt="sedona welcome">
+      <img src="img/bg_index.jpg" width="1200px" alt="background-image">
+      <img src="img/slogan.png" alt="sedona-welcome">
+      <img src="img/decor.png" width="1200" alt="decor_bg">
       <h1> СЕДОНА — небольшой городок в Аризоне, <br> заслуживающий большего!</h1>
       <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
     </div>
     <div class="reason1">
       <div class="truecity">
         <h2>Настоящий городок</h2>
-        <p>— №1 — <br> Седона - не аттракцион для туристов, там течет своя жизнь</p>
+        <p>— №1 — Седона - не аттракцион для туристов, там течет своя жизнь</p>
       </div>
-      <img src="/img/photo1.jpg" alt="reason1">
+      <img src="img/image1.jpg" alt="reason1">
     </div>
     <div class="ext_reason1">
-      <article>
-        <img src="/img/home.jpg" alt="home">
+      <div class="home">
+        <img src="img/home.png" alt="home">
         <h2>Жилье</h2>
-        <p> Рекомендуем пожить в настоящем <br>  мотеле, все как в кино! </p>
-      </article>
-      <article>
-        <img src="/img/food.jpg" alt="food">
+        <p> Рекомендуем пожить в настоящем мотеле, все как в кино! </p>
+      </div>
+      <div class="food">
+        <img src="img/burger.png" alt="food">
         <h2>Еда</h2>
-        <p> Всегда заказывайте фирменный бургер, <br> вы не разочаруетесь! </p>
-      </article>
-      <article>
-        <img src="/img/souvenirs.jpg" alt="souvenirs">
+        <p> Всегда заказывайте фирменный бургер, вы не разочаруетесь! </p>
+      </div>
+      <div class="souvenirs">
+        <img src="img/present.png" alt="souvenirs">
         <h2>Сувениры</h2>
-        <p> Не только китайского, но и местного <br> производства </p>
-      </article>
+        <p> Не только китайского, но и местного производства </p>
+      </div>
     </div>
     <div class="reason2">
-        <img src="/img/photo2.jpg" alt="reason2">
+        <img src="img/image2.jpg"" alt="reason2">
         <div class="evil">
         <h2>Там есть мост дьявола</h2>
-        <p>— №2 — <br> Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+        <p>— №2 — Да, по нему можно пройти! Если конечно вы осмелитесь</p>
         </div>
     </div>
     <div class="restreasons">
       <div class="reason3">
         <h2>Небольшая площадь</h2>
-        <p>— №3 — <br>Все достопримечательности находятся очень близко</p>
+        <p>— №3 — Все достопримечательности находятся очень близко</p>
       </div>
       <div class="reason4">
         <h2>Красивая дорога</h2>
-        <p>— №4 — <br>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+        <p>— №4 — Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
       </div>
       <div class="reason5">
         <h2>Мало туристов</h2>
-        <p>— №5 — <br>
+        <p>— №5 — 
         Большинство едет в гранд каньон и толпится там</p>
       </div>
     </div>
     <div class="interested">
       <p>Заинтересовались?</p>
-      <p>Укажите предполагаемые даты поездки, <br> и мы покажем вам лучшие предлодения гостиниц в Седоне </p>
+      <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предлодения гостиниц в Седоне </p>
     </div>
-    <div class="search">
-      <p>Поиск гостиницы в Седоне</p>
-      <form>
-      <label for="checkin"> Дата заезда
-      <input type="date" id="checkin"> </label> <br>
-      <label for="checkout"> Дата заезда
-      <input type="date" id="checkout"> </label>
-      <br>
-      <label for="parents">Взрослые
-      <select id="parents">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      </label>
-      <label for="parents">Дети
-      <select id="children">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-      </select>
-      </label>
-      <br>
-      <a href="search.php">Найти</a>
-      </form>
-    </div>
+    <form action="search.php" method="GET">
+    <fieldset>
+      <legend>Поиск гостиницы в Седоне</legend>
+
+        <p><label for="checkin"> Дата заезда</label></p>
+        <input type="date" id="checkin">
+        <img src="img/cal_icon.png" alt="calendar">
+
+        <p><label for="checkout"> Дата выезда</label></p>
+        <input type="date" id="checkout">
+        <img src="img/cal_icon.png" alt="calendar">
+
+        <p><label for="parents">Взрослые</label></p>
+        <select id="parents">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+        
+
+        <p><label for="children">Дети</label></p>
+        <select id="children">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+
+        <a href="search.php"><p>Найти</p></a>
+    </fieldset>
+    </form>
+    </main>
     <footer>
       <div class="info">
         <p>#VISITSEDONA</p>
       </div>
       <div class="social">
         <ul>
-          <li><a href="#vk"><img src="http://placehold.it/20x20" alt="vkontakte"></a></li>
-          <li><a href="#fb"><img src="http://placehold.it/20x20" alt="facebook"></a></li>
-          <li><a href="#inst"><img src="http://placehold.it/20x20" alt="instagram"></a></li>
+          <li><a href="#vk"><img src="img/twitter.png" alt="twitter"></a></li>
+          <li><a href="#fb"><img src="img/fb.png" alt="facebook"></a></li>
+          <li><a href="#inst"><img src="img/youtube.png" alt="youtube"></a></li>
         </ul>
       </div>
       <div class="devby">
-        <img src="devby.jpg">
+        <a href="https://htmlacademy.ru/intensive/adaptive"><img src="img/devby.png"></a>
       </div>
     </footer>
   </body>
