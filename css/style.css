@@ -1,17 +1,21 @@
+/* ========================
+   Main defenitions 
+   ======================== */
+
 body {
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
   font-family: "PT Sans", Arial, sans-serif;
-  font-size: 16px;
   color: #333;
   background-color: #f2f2f2;
-  margin: 0px;
-  line-height: 1.7;
   font-style: normal;
   text-transform: uppercase;
+  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.2);
 }
 
 h2 {
-  padding: 0px;
-  margin: 0px;
+  margin: 0;  
   font-size: 21px;
   font-weight: 600;
   line-height: 26px;
@@ -19,32 +23,34 @@ h2 {
 }
 
 p {
+  margin: 0;
+  padding: 0;
   font-size: 14px;
   line-height: 21px;
-  margin: 0px;
-  padding: 0px;
 }
+
+/* ========================
+   Menu and logo 
+   ======================== */
 
 .logo {
   position: absolute;
-  margin:0 44%;
+  margin: 0 44%;
   z-index: 10;
 }
 
 .menu-main {
   background-color: #fff;
   list-style: none;
-  margin: 0px;
-  padding: 0px;
   white-space: nowrap;
-  font-size: 0px;
+  font-size: 0;
 }
 
 .menu-main li {
   display: inline-block;
   width: 25%;
-  padding-top: 17px;
-  padding-bottom: 17px;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 .menu-main li a {
@@ -86,70 +92,139 @@ p {
   opacity: 0.3;
 }
 
-.welcome img:nth-child(1) {
+/* ========================
+   Main welcoming image
+   ======================== */
+
+.welcome-image {
+  background: url("../img/bg_index.jpg") no-repeat;
   position: relative;
-  top: -55px;
-  z-index: -1; 
+  display: block;
+  height: 500px;
+  top: -57px;
+  z-index: -1;
 }
 
-.welcome img:nth-child(2) {
-  position: absolute;
-  top: 55px;
-  left: 355px;
+
+.welcome-image img:nth-child(1) {
+  position: relative;
+  top: 0px;
+  left: 50%;
+  z-index: 0; 
+}
+
+.welcome-image img:nth-child(2) {
+  position: relative;
+  top: 0;
+  left: 0;
   /*z-index: -1; */ 
 }
+/*
+.welcome-image img:nth-child(3) {
+  position: absolute;
+  top: 450px;
+  left: 0px;
+}*/
 
-.welcome img:nth-child(3) {
-  position: relative;
-  top: -330px;
-}
+/* Small description under the main image */
 
-.under-main {
-  margin-top: -340px;
+.welcome-slogan {
+  background: url("../img/decor.png") no-repeat;
+  box-sizing: border-box;
+  /*margin-top: -271px;*/
+  min-height: 216px;
   padding-top: 65px;
   padding-bottom: 55px;
   background-color: #fff;
   text-align: center;
 }
 
-.under-main p {
-  margin-top: 35px;
+.welcome-slogan h2 {
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
 }
+
+.welcome-slogan p {
+  margin-top: 28px;
+}
+
+/* ========================
+   Reason 1 - Настоящий городок + картинка
+   ======================== */
 
 .reason1 {
   display: flex;
   height: 255px;
 }
 
-.description {
+.reason1-info {
   box-sizing: border-box;
+  padding-top: 47px;
+  padding-bottom: 60px;
   flex-basis: 400px;
   height: 255px;
   background-color: #81b3d2;
   color: #fff;
   text-align: center;
-  padding-top: 47px;
 }
 
-.truecity p {
-  padding-top: 25px;
+.reason1-info p {
+  margin-top: 20px;
+  padding: 0 60px;
+  line-height: 21px;
+}
+
+.reason1-info p.reason1-info-title {
+  margin-top: 0;
+  padding: 0 30%;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .reason1 img {
+  position: relative;
   flex-basis: 800px;
+  top: -80px;
+  z-index: -1;
 }
 
-.ext_reason1 {
+/* ========================
+   Extra reasons on top of Reason1 
+   ======================== */
+
+.extra-reason1 {
   display: flex;
   height: 330px;
 }
 
-.extra1 {
+.extra-reason1-info {
   box-sizing: border-box;
+  padding-top: 60px;
+  padding-bottom: 85px;
+  flex-basis: 400px;
   background-color: #fff;
   text-align: center;
-  padding-top: 40px;
 }
+
+.extra-reason1-info p {
+  padding: 0 70px;
+  margin-top: 25px;
+  line-height: 21px;
+}
+
+.extra-reason1-info p.extra-reason1-title {
+  text-align: center;
+  line-height: 21px;
+  font-size: 21px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+/* ========================
+   Reason 2 - Там есть мост Дьявола + картинка
+   ======================== */
 
 .reason2 {
   display: flex;
@@ -202,7 +277,7 @@ p {
   display: flex;
   background-color: #fff;
   min-height: 120px;
-  bottom: 0px;
+  bottom:0;
 }
 
 .footer-info {
@@ -234,15 +309,15 @@ p {
 }
 
 .twitter  {
-  background-position: 0px 0px;
+  background-position:0 0;
 }
 
 .fb {
-  background-position: -43px 0px;
+  background-position: -43px 0;
 }
 
 .youtube {
-  background-position: -91px 0px;
+  background-position: -91px 0;
 }
 
 .footer-devby {
@@ -257,7 +332,7 @@ p {
   display: flex;
   background: url("../img/bg.jpg") no-repeat #537fa4;
   color: #fff;
-  padding: 28px 0;
+  padding: 29px 0;
 }
 
 /*.search:after {
@@ -298,7 +373,7 @@ p {
 }
 
 .pool {
-  background-position: 0px 0px;
+  background-position:00;
 }
 
 .checkbox-indicator::after + input[type="checkbox"]:checked {
@@ -324,7 +399,7 @@ p {
 }
 
 .search-infrastr label:last-child p{
-  margin-bottom: 0px;
+  margin-bottom:0;
 }
 
 .filter-range {
@@ -343,7 +418,7 @@ p {
   position:  relative;
   height: 36px;
   margin-bottom: 20px;
-  font-size: 0px;
+  font-size:0;
   border: 2px solid #fff;
   border-radius: 2px;
 }
@@ -415,7 +490,7 @@ p {
 }
 
 .range-toggle-min {
-  left: 0px;
+  left:0;
 }
 
 .range-toggle-max {
@@ -449,8 +524,8 @@ p {
 .results {
   box-sizing: border-box;
   background: #fff;
-  min-height: 85px;
-  padding: 28px 0;
+  min-height: 86px;
+  padding: 30px 0 29px 0;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -462,7 +537,7 @@ p {
 }
 
 .results-foundnumber {
-  padding: 0px;
+  padding:0;
   margin-right: 45px;
   font-size: 21px;
   font-weight: 600;
@@ -473,7 +548,7 @@ p {
 .results-menu-sort {
   display: inline-block;
   list-style: none;
-  font-size: 0px;
+  font-size:0;
 }
 
 .results li {
@@ -508,8 +583,8 @@ p {
 }
 
 .order a {
-  margin: 0px;
-  padding: 0px;
+  margin:0;
+  padding:0;
 }
 
 a.order-up {
@@ -665,11 +740,11 @@ a.order-up {
 
 /* Supporting class */
 
-.container {
+/*.container {
   position: relative;
   width: 1200px;
   margin: 0 auto;
-}
+}*/
 
 .positioner {
   padding-left: 72px;
