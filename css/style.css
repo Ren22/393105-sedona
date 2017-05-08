@@ -29,28 +29,37 @@ p {
   line-height: 21px;
 }
 
+header,
+main,
+footer {
+  width: inherit;
+}
+
 /* ========================
    Menu and logo 
    ======================== */
 
 .logo {
   position: absolute;
-  margin: 0 44%;
-  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
 }
 
 .menu-main {
+  position: absolute;
+  box-sizing: border-box;
+  width: inherit;
   background-color: #fff;
   list-style: none;
+  padding: 0 0;
   white-space: nowrap;
   font-size: 0;
 }
 
 .menu-main li {
   display: inline-block;
-  width: 25%;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding: 20px 0;
 }
 
 .menu-main li a {
@@ -58,25 +67,34 @@ p {
   color: #000;
   font-family: 'PT Sans'; /*добавить другие фонты */
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
 }
 
-
 .menu-main li:nth-child(1) {
+  box-sizing: border-box;
   text-align: left;
+  width: 25%;
+  padding-left: 72px;
 }
 
 .menu-main li:nth-child(2) {
+  box-sizing: border-box;
   text-align: left;
+  width: 25%;
 }
 
 .menu-main li:nth-child(3) {
+  box-sizing: border-box;
   text-align: right;
+  width: 25%;
 }
 
 .menu-main li:nth-child(4) {
+  box-sizing: border-box;
   text-align: right;
+  width: 25%;
+  padding-right: 72px;
 }
 
 .menu-main > .active > a {
@@ -92,6 +110,10 @@ p {
   opacity: 0.3;
 }
 
+.menu-main li.active {
+  color: #81b3d2;
+}
+
 /* ========================
    Main welcoming image
    ======================== */
@@ -100,23 +122,20 @@ p {
   background: url("../img/bg_index.jpg") no-repeat;
   position: relative;
   display: block;
-  height: 500px;
-  top: -57px;
+  height: 564px;
   z-index: -1;
 }
 
-
 .welcome-image img:nth-child(1) {
   position: relative;
-  top: 0px;
+  top: 133px;
   left: 50%;
-  z-index: 0; 
+  transform: translateX(-50%);
 }
 
 .welcome-image img:nth-child(2) {
   position: relative;
-  top: 0;
-  left: 0;
+  top: 152px;
   /*z-index: -1; */ 
 }
 /*
@@ -129,11 +148,8 @@ p {
 /* Small description under the main image */
 
 .welcome-slogan {
-  background: url("../img/decor.png") no-repeat;
   box-sizing: border-box;
-  /*margin-top: -271px;*/
-  min-height: 216px;
-  padding-top: 65px;
+  padding-top: 62px;
   padding-bottom: 55px;
   background-color: #fff;
   text-align: center;
@@ -150,41 +166,44 @@ p {
 }
 
 /* ========================
-   Reason 1 - Настоящий городок + картинка
+   Reason 1 + 2  - Настоящий городок + картинка/ Там есть мост дьявола
    ======================== */
 
-.reason1 {
+.reason {
   display: flex;
+  width: inherit;
   height: 255px;
 }
 
-.reason1-info {
+.reason-info {
   box-sizing: border-box;
   padding-top: 47px;
   padding-bottom: 60px;
   flex-basis: 400px;
-  height: 255px;
+  min-height: 255px;
   background-color: #81b3d2;
   color: #fff;
   text-align: center;
 }
 
-.reason1-info p {
-  margin-top: 20px;
-  padding: 0 60px;
+.reason-info p {
+  margin-top: 21px;
+  padding: 0 49px;
+  white-space: pre-line;
   line-height: 21px;
 }
 
-.reason1-info p.reason1-info-title {
+.reason-info p.reason-info-title {
   margin-top: 0;
   padding: 0 30%;
+  white-space: pre-line;
   text-align: center;
   font-size: 21px;
   font-weight: 600;
   text-transform: uppercase;
 }
 
-.reason1 img {
+.reason-info-image {
   position: relative;
   flex-basis: 800px;
   top: -80px;
@@ -201,17 +220,24 @@ p {
 }
 
 .extra-reason1-info {
-  box-sizing: border-box;
-  padding-top: 60px;
-  padding-bottom: 85px;
+  position: relative;
+  padding-top: 162px;
+  padding-bottom: 82px;
   flex-basis: 400px;
   background-color: #fff;
   text-align: center;
 }
 
+.extra-reason1-info img {
+  position: absolute;
+  top: 61px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .extra-reason1-info p {
-  padding: 0 70px;
-  margin-top: 25px;
+  padding: 0 55px;
+  margin-bottom: 22px;
   line-height: 21px;
 }
 
@@ -222,33 +248,55 @@ p {
   font-weight: 600;
   text-transform: uppercase;
 }
+
 /* ========================
-   Reason 2 - Там есть мост Дьявола + картинка
+   Extra reasons after Reason 2
    ======================== */
 
-.reason2 {
+.extra-reason2 {
   display: flex;
   height: 255px;
 }
 
-.ext_reason2 {
-  display: flex;
-  height: 255px;
-}
-
-.extra2 {
+.extra-reason2-info {
   box-sizing: border-box;
+  flex-basis: 400px;  
   background-color: #eee;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 47px;
+  padding-bottom: 60px;
+  text-align: center;
 }
 
+.extra-reason2 p {
+  margin-top: 22px;
+  padding: 0 65px;
+  white-space: pre-line;
+  line-height: 21px;
+}
+
+p.extra-reason2-title {
+  margin-top: 0;
+  padding: 0 35%;
+  text-align: center;
+  font-size: 21px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ========================
+   INTERESTED section
+   ======================== */
+
+
 .interested {
-  height: 290px;
+  box-sizing: border-box;
+  min-height: 290px;
   color: #000;
   background-color: #fff; 
   text-align: center;
-  padding-top: 55px;
+  padding-top: 58px;
+  padding-bottom: 133px;
 }
 
 .question {
@@ -273,11 +321,24 @@ p {
   color: inherit;
 }
 
+/* ========================
+   FOOTER
+   ======================== */
+
 .footer {
+  position: absolute;
   display: flex;
+  width: inherit;
+  min-height: 124px;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Relative footer fix for catalog.html */
+
+.footer-catalog {
+  position: relative;
   background-color: #fff;
-  min-height: 120px;
-  bottom:0;
 }
 
 .footer-info {
@@ -326,13 +387,16 @@ p {
   margin: auto;
 }
 
-/*catalog page */
+/* ========================
+   CATALOG PAGE
+   ======================== */
 
 .search {
   display: flex;
   background: url("../img/bg.jpg") no-repeat #537fa4;
   color: #fff;
-  padding: 29px 0;
+  height: 188px;
+  padding-top: 85px;
 }
 
 /*.search:after {
