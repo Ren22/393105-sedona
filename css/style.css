@@ -3,15 +3,12 @@
    ======================== */
 
 body {
-  position: relative;
-  width: 1200px;
-  margin: 0 auto;
   font-family: "PT Sans", Arial, sans-serif;
   color: #333;
   background-color: #f2f2f2;
   font-style: normal;
   text-transform: uppercase;
-  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.2);
+  
 }
 
 h2 {
@@ -29,11 +26,6 @@ p {
   line-height: 21px;
 }
 
-header,
-main,
-footer {
-  width: inherit;
-}
 
 /* ========================
    Menu and logo 
@@ -47,9 +39,7 @@ footer {
 }
 
 .menu-main {
-  position: absolute;
   box-sizing: border-box;
-  width: inherit;
   background-color: #fff;
   list-style: none;
   padding: 0 0;
@@ -59,6 +49,7 @@ footer {
 
 .menu-main li {
   display: inline-block;
+  vertical-align: top;
   padding: 20px 0;
 }
 
@@ -110,8 +101,8 @@ footer {
   opacity: 0.3;
 }
 
-.menu-main li.active {
-  color: #81b3d2;
+.menu-main a.active:hover {
+  color: #766357;
 }
 
 /* ========================
@@ -119,15 +110,28 @@ footer {
    ======================== */
 
 .welcome-image {
-  background: url("../img/bg_index.jpg") no-repeat;
+  background: #dae8f1 url("../img/bg_index.jpg") no-repeat;
   position: relative;
-  display: block;
-  height: 564px;
-  z-index: -1;
+  min-height: 508px;
 }
 
-.welcome-image img:nth-child(1) {
-  position: relative;
+.welcome-image img {
+  position: absolute;
+  top: 76px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.welcome-image-extra {
+  background: url("../img/decor.png") no-repeat;
+  position: absolute;
+  top: 451px;
+  width: 100%;
+  min-height: 57px;
+}
+
+/*.welcome-image img:nth-child(1) {
+  position: absolute;
   top: 133px;
   left: 50%;
   transform: translateX(-50%);
@@ -136,8 +140,8 @@ footer {
 .welcome-image img:nth-child(2) {
   position: relative;
   top: 152px;
-  /*z-index: -1; */ 
-}
+  
+}*/
 /*
 .welcome-image img:nth-child(3) {
   position: absolute;
@@ -291,6 +295,7 @@ p.extra-reason2-title {
 
 .interested {
   box-sizing: border-box;
+  position: relative;
   min-height: 290px;
   color: #000;
   background-color: #fff; 
@@ -309,16 +314,177 @@ p.extra-reason2-title {
   line-height: 24px;
 }
 
-.search-form {
+.title-form a {
   position: absolute;
-  margin-top: -100px;
-  margin-left: 312px;
-  width: 568px;
+  padding: 31px 140px;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #766357;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: 600;
+}
+/* ========================
+   FORM
+   ======================== */
+
+.search-form-show {
+  display: block;
 }
 
+form.search-form {
+
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 55px;
+  
+  background-color: #fff;
+  /* set only if use blocks without flexes 
+  font-size: 0px;
+  */
+  box-shadow: 0 0 5px 5px rgba(0,0,0, 0.15);
+}
+
+.search-form .checkin,
+.search-form .checkout {
+  display: flex;
+  position: relative;
+  height: 38px;
+  margin-bottom: 30px;
+}
+
+/* test input without flexes 
+
+.search-form label {
+  
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-right: 20px;
+  padding-top: 10px;
+}
+ 
 .search-form input {
+  background: url("../img/cal_icon.png") 97% 45% no-repeat;
+  font-size: 0px;
+  min-height: 38px;
+  width: 344px;
+  background-color: #f2f2f2;
   font: inherit;
   color: inherit;
+  text-align: center;
+  border: none;
+}
+/* endtest */
+
+.checkin input[type="text"],
+.checkout input[type="text"] {
+  /*width: 100%;*/
+  box-sizing: border-box;
+  position: relative;
+  width: 345px;
+  margin-left: auto;
+  padding-left: 10px;
+  background-color: #f2f2f2;
+  font: inherit;
+  color: inherit;
+  border: none;
+}
+
+.checkin input[type="date"]:hover,
+.checkout input[type="date"]:hover {
+  background-color: #ebebeb;
+} 
+
+.checkin input[type="date"]:focus,
+.checkout input[type="date"]:focus {
+  background-color: #fff;
+  outline: 2px solid #e5e5e5;
+} 
+
+.checkin label,
+.checkout label {
+  box-sizing: border-box;
+  flex-basis: 92px;
+  margin-right: 20px;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+ 
+.search-form .checkin {
+  display: flex;
+  height: 38px;
+}
+
+button.calendar {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  background: url("../img/calendar.png") 0 0 no-repeat;
+  border: none;
+}
+
+button.calendar:hover {
+  background: url("../img/calendar.png") 0px -40px no-repeat;
+}
+
+button.calendar:active {
+  background: url("../img/calendar.png") 0px -77px no-repeat;
+}
+
+span.parents {
+  display: inline-block;
+  width: 115px;
+  background-color: #f2f2f2;
+}
+
+.children {
+  display: inline-block;
+}
+
+.form-btn {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  background-color: #81b3d2;
+  font-size: 21px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.form-btn:hover {
+  background-color: #669ec0;
+}
+
+.form-btn:active {
+  background-color: #5496bd;
+  color: rgba(255,255,255,0.3);
+}
+/* ========================
+   MAP
+   ======================== */
+
+.map {
+  position: absolute;
+  background: #fff url("../img/map.jpg");
+  bottom: 0px;
+  min-height: 593px;
+  width: 100%;
+  height: 78px;
+  outline: 1px solid red;
 }
 
 /* ========================
@@ -327,14 +493,11 @@ p.extra-reason2-title {
 
 .footer {
   position: absolute;
+  width: 100%;
   display: flex;
-  width: inherit;
   min-height: 124px;
-  bottom: 0;
   background-color: rgba(255, 255, 255, 0.9);
 }
-
-/* Relative footer fix for catalog.html */
 
 .footer-catalog {
   position: relative;
@@ -358,15 +521,17 @@ p.extra-reason2-title {
 }
 
 .footer-share a:active{
-  background-color: #5496bd;
-  /*ЗАДАТЬ OPACITY ДЛЯ image url? */
+  background-image: url(../img/share.png) no-repeat;
+  opacity: 0.3;
+  background-color: 
 }
 
 .share {
   display: inline-block;
+  vertical-align: top;
   width: 46px;
   height: 48px;
-  background:  #81b3d2 url(../img/share.png) no-repeat;
+  background: #81b3d2 url(../img/share.png) no-repeat;
 }
 
 .twitter  {
@@ -500,6 +665,7 @@ p.extra-reason2-title {
 
 .price-controls label {
   display: inline-block;
+  vertical-align: top;
   font-size: 14px;
   line-height: 38px;
   vertical-align: top;
@@ -804,11 +970,11 @@ a.order-up {
 
 /* Supporting class */
 
-/*.container {
-  position: relative;
+.container {
   width: 1200px;
   margin: 0 auto;
-}*/
+  box-shadow: 0 0 5px 0 rgba(0,0,0, 0.3);
+}
 
 .positioner {
   padding-left: 72px;
