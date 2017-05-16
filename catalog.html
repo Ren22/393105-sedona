@@ -16,37 +16,43 @@
           <li><a href="info.html">Информация</a></li>
           <li><a href="photovideo.html">Фото и видео</a></li>
           <li><a href="map.html">Карта штата</a></li>
-          <li><a class="active" href="catalog.html">Гостиницы</a></li>
+          <li><a class="selected" href="catalog.html">Гостиницы</a></li>
         </ul>
       </header>
       <main>
-        <div class="search positioner">
-            <form action="search.php" class="search-infrastr" method="GET">
-              <div class="search-title">Инфраструктура:</div>
-              <label for="pool">
-                <input type="checkbox" id="pool" checked>Бассейн
-                <span class="checkbox-indicator pool"></span>
-                </label>
-              <label for="parking">
-                <input type="checkbox" id="parking">
-                <span class="checkbox-indicator parking"></span>Парковка
-                </label>
-              <label for="wifi">
-                <input type="checkbox" id="wifi">
-                <span class="checkbox-indicator wifi"></span>Wi-Fi
-                </label>
-            </form>
-            <form action="search.php" class="search-type" method="GET">
-              <!-- <fieldset> -->
-              <div class="search-title">Тип жилья:</div>
-                  <label for="hotel">
-                  <input type="checkbox" id="hotel" checked>Отель</label>
-                  <label for="motel">
-                  <input type="checkbox" id="motel" checked>Мотель</label>
-                  <label for="aparts">
-                  <input type="checkbox" id="aparts" checked>Апартаменты</label>
-              <!-- </fieldset> -->
-            </form>
+        <form class="search-catalog positioner" action="search.php" class="search-infrastr" method="GET">
+          <div class = "search-catalog-block">
+            <div class="search-catalog-title">Инфраструктура:</div>
+            <label for="pool">
+              <input type="checkbox" name="pool" id="pool" checked>
+              <span class="checkbox-indicator"></span>Бассейн
+            </label>
+            <label for="parking">
+              <input type="checkbox" id="parking" disabled checked>
+              <span class="checkbox-indicator"></span>Парковка
+            </label>
+            <label for="wifi">
+              <input type="checkbox" id="wifi">
+              <span class="checkbox-indicator"></span>Wi-Fi
+            </label>
+          </div>
+
+          <div class = "search-catalog-block">
+            <div class="search-catalog-title">Тип жилья:</div>
+            <label for="guesthouse">
+              <input type="checkbox" name="guesthouse" id="guesthouse" checked>
+              <span class="checkbox-indicator"></span>Гостиница
+            </label>
+            <label for="motel">
+              <input type="checkbox" name="motel" id="motel" checked>
+              <span class="checkbox-indicator"></span>Мотель
+            </label>
+            <label for="aparts">
+              <input type="checkbox" name="aparts" id="aparts" checked>
+              <span class="checkbox-indicator"></span>Апартаменты
+            </label>
+          </div>
+
           <div class="filter-range">
             <div class="filter-range-title"> Стоимость в сутки(р)
             </div>
@@ -63,90 +69,79 @@
             </div>
             <button class="btn-transparent" type="submit">Показать</button>
           </div>
-            <!-- <form action="price.php" method="GET">
-              <p>Стоимость в сутки(Р):</p>
-              <div>
-                <p>от <span>0</span></p>
-              </div>
-              <div>
-                <p>до <span>0</span></p>
-              </div>
-              <div class="select_price"></div>
-              <input type="submit" value="Показать">
-            </form> -->
+        </form>
+        <div class="results positioner">
+          <div class="results-founded">
+            <span class="results-foundnumber">Найдено: 3</span> Сортировка:
           </div>
-          <div class="results positioner">
-            <div class="results-founded">
-              <span class="results-foundnumber">Найдено: 3</span> Сортировка:
-            </div>
-            <div class="results-sort">
-              <ul class="results-menu-sort">
-                <li class="active"><a>По цене</a></li>
-                <li><a href="#type">По типу</a></li>
-                <li><a href="#rating">По рейтингу</a></li>
-              </ul>
-            </div>
-            <div class="order">
-              <a href = "#" class="order-up"><img src="img/order_up.png" width="11" height="10" alt="order_up"></a>
-              <a href = "" class="order-down"><img src="img/order_down.png" width="11" height="10" alt="order_down"></a>
-            </div>
+          <div class="results-sort">
+            <ul class="results-menu-sort">
+              <li class="active"><a>По цене</a></li>
+              <li><a href="#type">По типу</a></li>
+              <li><a href="#rating">По рейтингу</a></li>
+            </ul>
           </div>
-          <div class="hotels">
-            <section class="hotels-results positioner">
-              <div class="hotels-photo"><img src="img/hotel1.jpg" width="135" height="90" alt="search_result1"></div>
-              <div class="hotels-info">
-                <h2>Amara Resort & Spa</h2>
-                <div class="hotels-choose-tab">
-                  <p>Гостиница</p>
-                  <a class="more" href="more.php">Подробнее</a>
-                </div>
-                <div class="hotels-choose-tab">
-                  <p>от 4000 Р.</p>
-                  <a class="book" href="book.php">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-stars">
-                <img src="img/4stars.png" width="89" height="17" alt="4stars">
-                <p class="hotels-rank"> Рейтинг: <span>8,5</span></p>
-              </div>
-            </section>
-            <section class="hotels-results positioner">
-              <div class="hotels-photo"><img src="img/hotel2.jpg" width="135" height="90" alt="search_result2"></div>
-              <div class="hotels-info">
-                <h2>Desert Quail Inn</h2>
-                <div class="hotels-choose-tab">
-                  <p>Мотель</p>
-                  <a class="more" href="more.php">Подробнее</a>
-                </div>
-                <div class="hotels-choose-tab">
-                  <p>от 3000 Р.</p>
-                  <a class="book" href="book.php">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-stars">
-                <img src="img/3stars.png" width="65" height="17" alt="4stars">
-                <p class="hotels-rank"> Рейтинг: <span>8,9</span></p>
-              </div>
-            </section>
-            <section class="hotels-results positioner">
-              <div class="hotels-photo"><img src="img/hotel3.jpg" width="135" height="90" alt="search_result3"></div>
-              <div class="hotels-info">
-                <h2>Villas at Poco Diablo</h2>
-                <div class="hotels-choose-tab">
-                  <p>Апартаменты</p>
-                  <a class="more" href="more.php">Подробнее</a>
-                </div>
-                <div class="hotels-choose-tab">
-                  <p>от 2000 Р.</p>
-                  <a class="book" href="book.php">Забронировать</a>
-                </div>
-              </div>
-              <div class="hotels-stars">
-                <img src="img/2stars.png" width="42" height="17" alt="4stars">
-                <p class="hotels-rank"> Рейтинг: <span>9,2</span></p>
-              </div>
-            </section>
+          <div class="order">
+            <button class="order-up selected" type="button" title="По убыванию"></button>
+            <button class="order-down selected" type="button" title="По возрастанию" checked></button>
           </div>
+        </div>
+        <div class="hotels">
+          <section class="hotels-results positioner">
+            <div class="hotels-photo"><img src="img/hotel1.jpg" width="135" height="90" alt="search_result1"></div>
+            <div class="hotels-info">
+              <h2>Amara Resort & Spa</h2>
+              <div class="hotels-choose-tab">
+                <p>Гостиница</p>
+                <a class="more" href="more.php">Подробнее</a>
+              </div>
+              <div class="hotels-choose-tab">
+                <p>от 4000 Р.</p>
+                <a class="book" href="book.php">Забронировать</a>
+              </div>
+            </div>
+            <div class="hotels-stars">
+              <img src="img/4stars.png" width="89" height="17" alt="4stars">
+              <p class="hotels-rank"> Рейтинг: <span>8,5</span></p>
+            </div>
+          </section>
+          <section class="hotels-results positioner">
+            <div class="hotels-photo"><img src="img/hotel2.jpg" width="135" height="90" alt="search_result2"></div>
+            <div class="hotels-info">
+              <h2>Desert Quail Inn</h2>
+              <div class="hotels-choose-tab">
+                <p>Мотель</p>
+                <a class="more" href="more.php">Подробнее</a>
+              </div>
+              <div class="hotels-choose-tab">
+                <p>от 3000 Р.</p>
+                <a class="book" href="book.php">Забронировать</a>
+              </div>
+            </div>
+            <div class="hotels-stars">
+              <img src="img/3stars.png" width="65" height="17" alt="4stars">
+              <p class="hotels-rank"> Рейтинг: <span>8,9</span></p>
+            </div>
+          </section>
+          <section class="hotels-results positioner">
+            <div class="hotels-photo"><img src="img/hotel3.jpg" width="135" height="90" alt="search_result3"></div>
+            <div class="hotels-info">
+              <h2>Villas at Poco Diablo</h2>
+              <div class="hotels-choose-tab">
+                <p>Апартаменты</p>
+                <a class="more" href="more.php">Подробнее</a>
+              </div>
+              <div class="hotels-choose-tab">
+                <p>от 2000 Р.</p>
+                <a class="book" href="book.php">Забронировать</a>
+              </div>
+            </div>
+            <div class="hotels-stars">
+              <img src="img/2stars.png" width="42" height="17" alt="4stars">
+              <p class="hotels-rank"> Рейтинг: <span>9,2</span></p>
+            </div>
+          </section>
+        </div>
       </main>
       <footer>
         <div class="footer-main footer-catalog">

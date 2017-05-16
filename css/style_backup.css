@@ -43,9 +43,8 @@ footer {
 .menu-main {
   box-sizing: border-box;
   background-color: #fff;
-  padding: 0;
   list-style: none;
-  text-align: center;
+  padding: 0 0;
   white-space: nowrap;
   font-size: 0;
 }
@@ -59,7 +58,7 @@ footer {
 .menu-main li a {
   display: block;
   color: #000;
-  font-family: "PT Sans", Arial, sans-serif;
+  font-family: 'PT Sans'; /*добавить другие фонты */
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
@@ -67,43 +66,40 @@ footer {
 
 .menu-main li:nth-child(1) {
   box-sizing: border-box;
-  margin-left: 0px;
   text-align: left;
-  width: 20%;
+  width: 25%;
+  padding-left: 72px;
 }
 
 .menu-main li:nth-child(2) {
   box-sizing: border-box;
   text-align: left;
-  width: 20%;
+  width: 25%;
 }
 
 .menu-main li:nth-child(3) {
   box-sizing: border-box;
-  margin-left: 100px;
   text-align: right;
-  width: 20%;
+  width: 25%;
 }
 
 .menu-main li:nth-child(4) {
   box-sizing: border-box;
   text-align: right;
-  width: 20%;
+  width: 25%;
+  padding-right: 72px;
 }
 
 .menu-main a:hover {
   color: #81b3d2;
 }
 
-.menu-main a:active {
-  color: #cacaca;
-}
 
-.menu-main a.selected {
+.menu-main a.active {
   color: #766357;
 }
 
-.menu-main a.selected:hover {
+.menu-main a.active:hover {
   color: #766357;
   cursor: default;
 }
@@ -132,6 +128,27 @@ footer {
   width: 100%;
   min-height: 57px;
 }
+
+/*.welcome-image img:nth-child(1) {
+  position: absolute;
+  top: 133px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.welcome-image img:nth-child(2) {
+  position: relative;
+  top: 152px;
+  
+}*/
+/*
+.welcome-image img:nth-child(3) {
+  position: absolute;
+  top: 450px;
+  left: 0px;
+}*/
+
+/* Small description under the main image */
 
 .welcome-slogan {
   box-sizing: border-box;
@@ -317,67 +334,129 @@ p.extra-reason2-title {
   display: block;
 }
 
-.search-form {
+form.search-form {
   position: absolute;
   box-sizing: border-box;
   left: 50%;
   transform: translateX(-50%);
   padding: 55px;
   z-index: 1;
-  font-family: inherit;
-  font-size: 0;
   background-color: #fff;
+  /* set only if use blocks without flexes 
+  font-size: 0px;
+  */
   box-shadow: 0 0 5px 5px rgba(0,0,0, 0.15);
 }
 
-.line-checkin label,
-.line-checkout label {
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  width: 112px;
-  height: 36px;
-  padding: 12px 0;
+.search-form .line-checkin,
+.search-form .line-checkout {
+  display: flex;
+  position: relative;
+  height: 38px;
+  margin-bottom: 30px;
+}
+
+/* test input without flexes 
+
+.search-form label {
+  
   font-size: 14px;
   font-weight: 600;
+  text-align: center;
+  margin-right: 20px;
+  padding-top: 10px;
 }
+ 
+.search-form input {
+  background: url("../img/cal_icon.png") 97% 45% no-repeat;
+  font-size: 0px;
+  min-height: 38px;
+  width: 344px;
+  background-color: #f2f2f2;
+  font: inherit;
+  color: inherit;
+  text-align: center;
+  border: none;
+}
+/* endtest */
 
 .line-checkin input[type="text"],
 .line-checkout input[type="text"] {
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
+  /*width: 100%;*/
   box-sizing: border-box;
-  width: 346px;
-  height: 36px;
-  padding: 12px 0;
+  position: relative;
+  width: 345px;
+  margin-left: auto;
   padding-left: 10px;
-  margin-bottom: 30px;
-  color: #000;
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: left;
-  text-transform: uppercase;
   background-color: #f2f2f2;
+  font: inherit;
+  color: inherit;
   border: none;
+}
+
+.line-checkin input[type="date"]:hover,
+.line-checkout input[type="date"]:hover {
+  background-color: #ebebeb;
 } 
 
-.parents, 
-.children {
+.line-checkin input[type="date"]:focus,
+.line-checkout input[type="date"]:focus {
+  background-color: #fff;
+} 
+
+.line-checkin label,
+.line-checkout label {
+  box-sizing: border-box;
+  flex-basis: 92px;
+  margin-right: 20px;
+  padding-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+ 
+.search-form .line-checkin {
+  display: flex;
+  height: 38px;
+}
+
+button.calendar {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  background: url("../img/calendar.png") 0 0 no-repeat;
+  border: none;
+}
+
+button.calendar:hover {
+  background: url("../img/calendar.png") 0px -40px no-repeat;
+}
+
+button.calendar:active {
+  background: url("../img/calendar.png") 0px -77px no-repeat;
+}
+
+.family-line {
+  font-size: 0px;
+}
+
+.parents, .childen {
   display: inline-block;
   vertical-align: top;
   box-sizing: border-box;
-  width: 112px;
-  height: 36px;
+  height: 35px;
   padding: 12px 0;
+  width: 110px;
   font-size: 14px;
   font-weight: 600;
 }
- 
+
 .children {
-  width: 118px;
-  padding: 12px 27px 12px 53px; 
+  margin-right: 0;
 }
 
 .counter-block {
@@ -392,6 +471,7 @@ p.extra-reason2-title {
   font-weight: 600;
   text-align: center;
   background-color: #f2f2f2;
+  
 }
 
 .counter-minus {
@@ -462,7 +542,7 @@ p.extra-reason2-title {
 .form-btn {
   display: block;
   width: 100%;
-  margin-top: 55px;
+  margin-top: 54px;
   padding: 16px 0;
   background-color: #81b3d2;
   font-size: 21px;
@@ -480,13 +560,12 @@ p.extra-reason2-title {
   background-color: #5496bd;
   color: rgba(255,255,255,0.3);
 }
-
 /* ========================
-   FOOTER + MAP
+   MAP
    ======================== */
 
 .map {
-  position: absolute;
+  position: relative;
   background: #fff url("../img/map.jpg");
   bottom: 0px;
   min-height: 593px;
@@ -494,8 +573,11 @@ p.extra-reason2-title {
   height: 78px;
 }
 
+/* ========================
+   FOOTER
+   ======================== */
 .footer-main {
-  /*position: absolute;*/
+  position: absolute;
   width: inherit;
   display: flex;
   top: -120px;
@@ -561,7 +643,7 @@ p.extra-reason2-title {
    CATALOG PAGE
    ======================== */
 
-.search-catalog {
+.search {
   display: flex;
   background: url("../img/bg.jpg") no-repeat #537fa4;
   color: #fff;
@@ -569,53 +651,36 @@ p.extra-reason2-title {
   padding-top: 30px;
 }
 
-.search-catalog-block {
-  flex-basis: 255px;
-} 
+/*.search:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
 
-.search-catalog-title {
-  display: block;
-  margin-bottom: 27px;
+.search-infrastr {
+ /* float: left;*/
+  flex-basis: 240px;
 }
 
-.search-catalog-block input[type="checkbox"] {
+.search-infrastr p {
+  margin-bottom: 23px;
+  margin-left: 40px;
+  line-height: 21px;
+  cursor: pointer;
+}
+
+.search-infrastr input[type="checkbox"] {
   display: none;
 }
 
-.search-catalog-block label {
+.search-infrastr label {
   display: block;
   position: relative;
-  margin-left: 40px;
-  margin-bottom: 25px;
-  font-size: 14px;
-  line-height: 21px;
-}
-
-.search-catalog-block  label:nth-child(4) {
-  margin-bottom: 0px;
-}
-
-.search-catalog-block  input[type="checkbox"] + .checkbox-indicator {
-  content: "";
-  position: absolute;
-  left: -40px;
-  top: -3px;
-  width: 28px;
-  height: 28px;
-  background: url("../img/checkbox_off.png") no-repeat;
-  cursor: pointer;
-}
-
-.search-catalog-block input[type="checkbox"]:checked + .checkbox-indicator {
-  left: -41px;
-  top: -5px;
-  background: url("../img/checkbox_on.png") no-repeat;
-  cursor: pointer;
 }
 
 .checkbox-indicator {
   position: absolute;
-  top: 0;
+  top:0px;
   width: 25px;
   height: 25px;
   margin-bottom: 10px;
@@ -623,22 +688,20 @@ p.extra-reason2-title {
   cursor: pointer;
 }
 
-.search-catalog-block  input[type="checkbox"] + .checkbox-indicator:hover {
-  background-position: 0px -31px;
+.pool {
+  background-position:00;
 }
 
-.search-catalog-block  input[type="checkbox"]:disabled + .checkbox-indicator {
-  background-position: 0px -61px;
+.checkbox-indicator::after + input[type="checkbox"]:checked {
+  background: url("../img/checkbox_on.png");
+  ne: 1px solid reoutlid;
 }
 
-.search-catalog-block  input[type="checkbox"]:checked + .checkbox-indicator {
-  background-position: 0px -30px;
+.search-type {
+  /*float: left;*/
+  padding-left: 15px;
+  flex-basis: 288px;
 }
-
-.search-catalog-block  input[type="checkbox"]:checked:disabled + .checkbox-indicator {
-  background-position: 0px -60px;
-}
-
 
 .search legend {
   font-weight: 600;
@@ -651,13 +714,13 @@ p.extra-reason2-title {
   display: none;
 }
 
-.search-catalog-block label:last-child p{
+.search-infrastr label:last-child p{
   margin-bottom:0;
 }
 
 .filter-range {
-  margin-left: auto;
-  flex-basis: 320px;
+  margin-left: auto; 
+  /*float: right;*/
 }
 
 .filter-range-title {
@@ -668,10 +731,10 @@ p.extra-reason2-title {
 }
 
 .price-controls {
-  position: relative;
-  height: 30px;
+  position:  relative;
+  height: 36px;
   margin-bottom: 20px;
-  font-size: 0;
+  font-size:0;
   border: 2px solid #fff;
   border-radius: 2px;
 }
@@ -690,25 +753,23 @@ p.extra-reason2-title {
 .price-controls label {
   display: inline-block;
   vertical-align: top;
-  padding: 4px 0;
-  width: 50%;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 38px;
+  vertical-align: top;
   cursor: pointer;
 }
 
 .price-controls .min-price,
 .price-controls .max-price {
-  box-sizing: border-box;
-  padding-left: 50px;
+  width: 90px;
+  padding-left: 65px;
 }
 
 .price-controls input {
-  width: 40px;
+  width: 50px;
   margin: 0;
   color: inherit;
   font: inherit;
-  text-align: center;
   background: none;
   border: none;
 }
@@ -756,7 +817,7 @@ p.extra-reason2-title {
 .btn-transparent {
   display: block;
   margin: 0 auto;
-  padding: 6px 33px;
+  padding: 6px 35px;
 
   font-size: 14px;
   line-height: 20px;
@@ -779,7 +840,6 @@ p.extra-reason2-title {
 
 .results {
   box-sizing: border-box;
-  position: relative;
   background: #fff;
   min-height: 86px;
   padding: 30px 0 29px 0;
@@ -836,96 +896,6 @@ p.extra-reason2-title {
 }
 
 .order {
-  position: absolute;
-  width: 35px;
-  height: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 72px;
-}
-
-.order-up,
-.order-down
- {
-  position: absolute;
-  right: 0;
-  border: 0;
-  background-color: transparent;
-  outline: none;
-  cursor: pointer;
-}
-
-.order-down {
-  right: 22px;
-}
-
-.order-up::before,
-.order-down::before {
-  content: "";
-  position: absolute;
-  width: 0px;
-  height: 0px;
-  border-top: 10px solid #ccc;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: none;
-}
-
-.order-down::before {
-  border-top: none;
-  border-bottom: 10px solid #ccc;
-}
-
-.order-up:hover::before {
-  border-top: 10px solid #000;
-  cursor: pointer;
-}
-
-.order-down:hover::before {
-  border-bottom: 10px solid #000;
-  cursor: pointer;
-}
-
-.order-up:active::before {
-  border-top: 10px solid #81b3d2;
-  cursor: pointer;
-}
-
-.order-down:active::before {
-  border-bottom: 10px solid #81b3d2;
-  cursor: pointer;
-}
-
-.order-up:checked::before {
-  border-top: 10px solid #81b3d2;
-}
-/*
-.selected::before {
-  border-bottom: 10px solid #81b3d2;
-}
-*/
-/*
-input[type="button"].order-down {
-  position: absolute;
-  display: none;
-  /*border: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-}*/
-
-
-/*
-.order-down:hover {
-  border-bottom: 10px solid #000;
-  cursor: pointer;
-}*/
-/*
-.order::after:hover {
-  border-top: 10px solid #000;
-}*/
-
-/*.order {
   float: right;
 }
 
@@ -936,7 +906,7 @@ input[type="button"].order-down {
 
 a.order-up {
   margin-right: 10px;
-}*/
+}
 
 .hotels {
   display: flex;
@@ -953,6 +923,13 @@ a.order-up {
 .hotels-photo {
   height: 90px;
 }
+
+/*.hotels-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 30px;
+}*/
 
 .hotels-info {
   margin-left: 30px;
@@ -994,7 +971,7 @@ a.order-up {
   background-color: #604e43;
 }
 
-.hotels-choose-tab > a.book:active {
+.hotels-choose-tab > a.more:active {
   background-color: #503e33;
   /*ЗАДАТЬ ПРАВИЛЬНЫЙ OPACITY ТОЛЬКО ДЛЯ ТЕКСТА? opacity: 0.3;*/
 }
@@ -1046,6 +1023,37 @@ a.order-up {
   text-align: center;
   font-size: 14px;
 }
+
+/*
+.menu {
+  display: flex;
+  color: #000;
+  list-style: none;
+  margin-top: 20px;
+  height: 55px;
+  border: 1px solid red;
+}
+
+.menu li:nth-child(1) {
+  padding-left: 72px;
+  
+}
+
+.menu li:nth-child(2) {
+  padding-left: 112px;
+}
+
+.menu li:nth-child(3) {
+  margin-left: 400px;
+  flex-grow: 1;
+}
+
+.menu li:nth-child(4) {
+  padding-left: 49px;
+  flex-grow: 1;
+}
+*/
+
 
 /* Supporting class */
 
