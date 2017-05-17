@@ -10,13 +10,6 @@ body {
   text-transform: uppercase;
 }
 
-p {
-  margin: 0;
-  padding: 0;
-  font-size: 14px;
-  line-height: 21px;
-}
-
 /* ========================
    Menu and logo 
    ======================== */
@@ -143,6 +136,10 @@ p {
 
 .welcome-slogan p {
   margin-top: 28px;
+  margin-bottom: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 /* ========================
@@ -152,7 +149,7 @@ p {
 .reason {
   display: flex;
   width: inherit;
-  height: 255px;
+  min-height: 255px;
 }
 
 .reason-info {
@@ -160,15 +157,16 @@ p {
   padding-top: 47px;
   padding-bottom: 60px;
   flex-basis: 400px;
-  min-height: 255px;
   background-color: #81b3d2;
   color: #fff;
   text-align: center;
 }
 
 .reason-info p {
+  margin: 0;
   margin-top: 21px;
   padding: 0 49px;
+  font-size: 14px;
   white-space: pre-line;
   line-height: 21px;
 }
@@ -183,20 +181,24 @@ p {
   text-transform: uppercase;
 }
 
-.reason-info-image {
-  position: relative;
+.reason-info-image1 {
+  background:#81b3d2 url("../img/image1.jpg") 0 -80px no-repeat;
+  background-size: auto;
   flex-basis: 800px;
-  top: -80px;
-  z-index: -1;
 }
 
+.reason-info-image2 {
+  background:#81b3d2 url("../img/image2.jpg") 0 -80px no-repeat;
+  background-size: auto;
+  flex-basis: 800px;
+}
 /* ========================
    Extra reasons on top of Reason1 
    ======================== */
 
 .extra-reason1 {
   display: flex;
-  height: 330px;
+  min-height: 330px;
 }
 
 .extra-reason1-info {
@@ -216,17 +218,24 @@ p {
 }
 
 .extra-reason1-info p {
-  padding: 0 55px;
-  margin-bottom: 22px;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
   line-height: 21px;
 }
 
 .extra-reason1-info p.extra-reason1-title {
   text-align: center;
+  margin-bottom: 20px;
   line-height: 21px;
   font-size: 21px;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.extra-reason1-info p.extra-reason1-text {
+  padding: 0px 55px;
+  line-height: 21px;
 }
 
 /* ========================
@@ -235,7 +244,7 @@ p {
 
 .extra-reason2 {
   display: flex;
-  height: 255px;
+  min-height: 255px;
 }
 
 .extra-reason2-info {
@@ -249,8 +258,10 @@ p {
 }
 
 .extra-reason2 p {
+  margin: 0;
   margin-top: 22px;
   padding: 0 65px;
+  font-size: 14px;
   white-space: pre-line;
   line-height: 21px;
 }
@@ -280,14 +291,17 @@ p.extra-reason2-title {
   padding-bottom: 133px;
 }
 
-.question {
+p.interested-question {
+  margin: 0;
+  padding-bottom: 20px; 
   font-size: 30px;
-  padding-bottom: 30px; 
   font-weight: 600;
 }
 
-.interested p {
+p.interested-dates {
   line-height: 24px;
+  font-size: 14px;
+  margin: 0;
 }
 
 .title-form a {
@@ -338,6 +352,7 @@ p.extra-reason2-title {
 
 .line-checkin input[type="text"],
 .line-checkout input[type="text"] {
+  background: url(../img/calendar.png) 98% % no-repeat;
   position: relative;
   display: inline-block;
   vertical-align: top;
@@ -356,6 +371,33 @@ p.extra-reason2-title {
   background-color: #f2f2f2;
   border: none;
 } 
+
+input[type="text"] + .calendar {
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+input[type="text"] + .calendar::after{
+  content: "";
+  position: absolute;
+  background: url(../img/calendar.png) 0 0 no-repeat;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+input[type="text"] + .calendar:hover::after {
+  background-position: 0 -40px;
+  cursor: pointer;
+}
+
+input[type="text"] + .calendar:active::after {
+  background-position: 0 -78px;
+  cursor: pointer;
+}
 
 .parents, 
 .children {
@@ -629,7 +671,7 @@ p.extra-reason2-title {
   display: flex;
   background: url("../img/bg.jpg") no-repeat #537fa4;
   color: #fff;
-  height: 188px;
+  min-height: 188px;
   padding-top: 30px;
 }
 
@@ -853,6 +895,7 @@ p.extra-reason2-title {
 .results-founded,
 .results-sort {
   display: inline-block;
+  vertical-align: top;
   font-size: 12px;
   line-height: 18px;
 }
@@ -868,12 +911,14 @@ p.extra-reason2-title {
 
 .results-menu-sort {
   display: inline-block;
+  vertical-align: top;
   list-style: none;
   font-size:0;
 }
 
 .results li {
   display: inline-block;
+  vertical-align: top;
 }
 
 .results-menu-sort a {
@@ -885,7 +930,7 @@ p.extra-reason2-title {
   border-bottom: 1px dotted #81b3d2;
 }
 
-.results-menu-sort > .active > a{
+.results-menu-sort a.selected {
   border-bottom: none;
   color: #81b3d2;
 }
@@ -997,8 +1042,18 @@ p.extra-reason2-title {
   text-transform: uppercase;
 }
 
+.hotels-info h2:hover {
+  color: #81b3d2;
+  cursor: pointer;
+} 
+
+.hotels-info h2:active {
+  color: #cacaca;
+} 
+
 .hotels-choose-tab {
   display: inline-block;
+  vertical-align: top;
 }
 
 .hotels-choose-tab > a.more {
@@ -1039,8 +1094,10 @@ p.extra-reason2-title {
 }
 
 .hotels-choose-tab p {
-  margin-top: 6px;
-  margin-bottom: 15px;
+  margin: 6px 0 15px 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 21px;
 }
 
 .hotels-stars {
@@ -1056,6 +1113,7 @@ p.extra-reason2-title {
 
 .hotels-rank {
   display: inline-block;
+  vertical-align: top;
   width: 111px;
   padding: 5px 0;
   background-color: #f2f2f2; 
