@@ -10,14 +10,6 @@ body {
   text-transform: uppercase;
 }
 
-h2 {
-  margin: 0;  
-  font-size: 21px;
-  font-weight: 600;
-  line-height: 26px;
-  text-transform: uppercase;
-}
-
 p {
   margin: 0;
   padding: 0;
@@ -25,10 +17,6 @@ p {
   line-height: 21px;
 }
 
-footer {
-  position: relative;
-  width: inherit;
-}
 /* ========================
    Menu and logo 
    ======================== */
@@ -114,6 +102,7 @@ footer {
 
 .welcome-image {
   background: #dae8f1 url("../img/bg_index.jpg") no-repeat;
+  background-size: auto;
   position: relative;
   min-height: 508px;
 }
@@ -127,6 +116,7 @@ footer {
 
 .welcome-image-extra {
   background: url("../img/decor.png") no-repeat;
+  background-size: contain;
   position: absolute;
   top: 451px;
   width: 100%;
@@ -142,9 +132,13 @@ footer {
 }
 
 .welcome-slogan h2 {
+  margin: 0;
+  padding: 0 30%;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 26px;
   text-align: center;
-  padding-left: 30%;
-  padding-right: 30%;
+  text-transform: uppercase;
 }
 
 .welcome-slogan p {
@@ -482,24 +476,33 @@ p.extra-reason2-title {
 }
 
 /* ========================
-   FOOTER + MAP
+   MAP
    ======================== */
+
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 473px;
+}
 
 .map {
   position: absolute;
   background: #fff url("../img/map.jpg");
-  bottom: 0px;
-  min-height: 593px;
+  background-size: 100%;
+  height: 593px;
   width: 100%;
-  height: 78px;
 }
 
+/* ========================
+   FOOTER
+   ======================== */
+
+
 .footer-main {
-  /*position: absolute;*/
-  width: inherit;
+  position: relative;
   display: flex;
-  top: -120px;
-  min-height: 124px;
+  padding: 35px 0;
+  height: 50px;
   background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -510,9 +513,18 @@ p.extra-reason2-title {
 }
 
 .footer-info {
+  box-sizing: border-box;
   flex-basis: 400px;
   text-align: center;
   margin: auto;
+}
+
+.footer-info h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: uppercase;
 }
 
 .footer-share {
@@ -521,42 +533,94 @@ p.extra-reason2-title {
   margin: auto;
 }
 
-.footer-share a:hover{
-  background-color: #669ec0;
-}
-
-.footer-share a:active{
-  background-image: url(../img/share.png) no-repeat;
-  opacity: 0.3;
-  background-color: 
-}
-
 .share {
+  position: relative;
   display: inline-block;
   vertical-align: top;
   width: 46px;
   height: 48px;
-  background: #81b3d2 url(../img/share.png) no-repeat;
+  background-color: #81b3d2;
+  cursor: pointer;
 }
 
-.twitter  {
-  background-position:0 0;
+.share:hover {
+  background-color: #669ec0;
 }
 
-.fb {
-  background-position: -43px 0;
+.share:active {
+  background-color: #5496bd;
 }
 
-.youtube {
-  background-position: -91px 0;
+.twitter::after {
+  content: "";
+  position: absolute;
+  background: url(../img/share.png) 0 0  no-repeat;
+  top: 0px;
+  left: 0;
+  width: 46px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.fb::after {
+  content: "";
+  position: absolute;
+  background: url(../img/share.png) -43px 0  no-repeat;
+  top: 0px;
+  left: 0px;
+  width: 46px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.youtube::after {
+  content: "";
+  position: absolute;
+  background: url(../img/share.png) -91px 0  no-repeat;
+  top: 0px;
+  left: 0px;
+  width: 46px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.twitter:active::after,
+.fb:active::after,
+.youtube:active::after {
+  opacity: 0.3;
 }
 
 .footer-devby {
   flex-basis: 400px;
-  text-align: center;
   margin: auto;
 }
 
+.footer-devby p {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  padding: 15px 7px 15px 102px; 
+  font-size: 14px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.footer-devby a {
+  display: inline-block;
+  vertical-align: top;
+  background: url("../img/devby.png") no-repeat;
+  background-position: 0px 5px;
+  width: 124px;
+  height: 50px;
+}
+
+.footer-devby a:hover {
+  background-position: 0px -43px;
+}
+
+.footer-devby a:active {
+  background-position: 0px -90px;
+}
 /* ========================
    CATALOG PAGE
    ======================== */
@@ -899,44 +963,11 @@ p.extra-reason2-title {
 .order-up:checked::before {
   border-top: 10px solid #81b3d2;
 }
-/*
+
 .selected::before {
-  border-bottom: 10px solid #81b3d2;
-}
-*/
-/*
-input[type="button"].order-down {
-  position: absolute;
-  display: none;
-  /*border: 0;
-  right: 0;
-  width: 10px;
-  height: 10px;
-}*/
-
-
-/*
-.order-down:hover {
-  border-bottom: 10px solid #000;
+  border-top: 10px solid #81b3d2;
   cursor: pointer;
-}*/
-/*
-.order::after:hover {
-  border-top: 10px solid #000;
-}*/
-
-/*.order {
-  float: right;
 }
-
-.order a {
-  margin:0;
-  padding:0;
-}
-
-a.order-up {
-  margin-right: 10px;
-}*/
 
 .hotels {
   display: flex;
@@ -956,6 +987,14 @@ a.order-up {
 
 .hotels-info {
   margin-left: 30px;
+}
+
+.hotels-info h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 26px;
+  text-transform: uppercase;
 }
 
 .hotels-choose-tab {
@@ -978,7 +1017,7 @@ a.order-up {
 
 .hotels-choose-tab > a.more:active {
   background-color: #5496bd;
-  /*ЗАДАТЬ ПРАВИЛЬНЫЙ OPACITY ТОЛЬКО ДЛЯ ТЕКСТА? opacity: 0.3;*/
+  color: rgba(255,255,255,0.3);
 }
 
 .hotels-choose-tab > a.book {
@@ -996,7 +1035,7 @@ a.order-up {
 
 .hotels-choose-tab > a.book:active {
   background-color: #503e33;
-  /*ЗАДАТЬ ПРАВИЛЬНЫЙ OPACITY ТОЛЬКО ДЛЯ ТЕКСТА? opacity: 0.3;*/
+  color: rgba(255,255,255,0.3);
 }
 
 .hotels-choose-tab p {
@@ -1004,9 +1043,6 @@ a.order-up {
   margin-bottom: 15px;
 }
 
-.hotels-info h2 {
-  margin-top: -4px;
-}
 .hotels-stars {
   display: flex;
   flex-direction: column;
@@ -1017,25 +1053,6 @@ a.order-up {
 .hotels-stars img {
   align-self: flex-end;
 }
-
-/*.hotels-choose-book a {
-  display: inline-block;
-  padding: 3px 17px;
-  color: white;
-  font-size: 14px;
-  line-height: 21px;
-  text-decoration: none;
-}*/
-/*
-.hotels-choose-book a.more {
-  background-color: #81b3d2;
-  margin-right: 5px;
-}
-
-.hotels-choose-book a.book {
-  background-color: #766357;
-}
-*/
 
 .hotels-rank {
   display: inline-block;
