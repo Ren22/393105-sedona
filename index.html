@@ -5,6 +5,7 @@
     <title>Седона - открой для себя Аризону!</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/script1_min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -21,10 +22,8 @@
       </header>
       <main>
         <div class="welcome-image">
-          <!-- <img src="img/bg_index.jpg" width="1200" height="773" alt="background-image"> -->
           <img src="img/slogan.png" width="455" height="351" alt="sedona-welcome">
           <div class="welcome-image-extra"></div>
-          <!-- <img src="img/decor.png" width="1200" height="57" alt="decor_bg"> -->
         </div>
         <div class="welcome-slogan">
           <h2> СЕДОНА — небольшой городок в Аризоне, заслуживающий большего!</h2>
@@ -117,23 +116,36 @@
         </div>
       </main>
       <footer>
-        <!-- <div class="footer-wrapper"> -->
-          <div class="footer-main">
-            <div class="footer-info">
-              <h2>#VISITSEDONA</h2>
-            </div>
-            <div class="footer-share">
-                <a href="twitter.com" class="share twitter"></a>
-                <a href="facebook.com" class="share fb"></a>
-                <a href="youtube.com" class="share youtube"></a>
-            </div>
-            <div class="footer-devby">
-              <p>WEBSITE BY</p>
-              <a href="https://htmlacademy.ru/intensive/htmlcss"></a>
-            </div>
+        <div class="footer-main">
+          <div class="footer-info">
+            <h2>#VISITSEDONA</h2>
           </div>
-        <!-- </div> -->
+          <div class="footer-share">
+              <a href="twitter.com" class="share twitter"></a>
+              <a href="facebook.com" class="share fb"></a>
+              <a href="youtube.com" class="share youtube"></a>
+          </div>
+          <div class="footer-devby">
+            <p>WEBSITE BY</p>
+            <a href="https://htmlacademy.ru/intensive/htmlcss"></a>
+          </div>
+        </div>
       </footer>
     </div>
+     <script>
+      var link = document.querySelector(".title-form-search");
+      var popup = document.querySelector(".search-form");
+      var close = popup.querySelector(".search-form-show");
+
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        popup.classList.add("search-form-show");
+      });
+      
+      close.addEventListener("click", function(event) {
+        event.preventDefault();
+        popup.classList.remove("search-form-show");
+      });
+    </script>
   </body>
 </html>
